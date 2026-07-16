@@ -1,0 +1,7 @@
+__pycache__/
+*.egg-info/
+build/
+dist/
+
+server.txt
+athome-server.txt

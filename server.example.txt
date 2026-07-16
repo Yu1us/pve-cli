@@ -1,0 +1,5 @@
+地址：https://pve.example.com:8006
+用户名：user@pve
+密码：change-me
+节点：pve-node
+VMID：100
