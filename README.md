@@ -8,7 +8,7 @@
 - VM 已安装并启用 QEMU Guest Agent
 - PVE 账号有目标 VM 的访问权限
 
-## 安装
+## 全局安装
 
 ```bash
 git clone <仓库地址>
@@ -16,9 +16,27 @@ cd pve-exec
 python -m pip install .
 ```
 
+安装后可在任意目录运行 `pve-exec` 和 `pve-cp`。
+
 ## 配置
 
-复制 `server.example.txt` 为 `server.txt`，填写自己的配置：
+配置文件固定放在用户目录的 `.pve-exec/server.txt`，不会依赖源码或 Python 安装目录。
+
+PowerShell：
+
+```powershell
+New-Item -ItemType Directory -Force $HOME\.pve-exec
+Copy-Item .\server.example.txt $HOME\.pve-exec\server.txt
+```
+
+Linux/macOS：
+
+```bash
+mkdir -p ~/.pve-exec
+cp server.example.txt ~/.pve-exec/server.txt
+```
+
+然后填写配置：
 
 ```text
 地址：https://pve.example.com:8006
@@ -28,7 +46,7 @@ python -m pip install .
 VMID：100
 ```
 
-`server.txt` 已被 Git 忽略，请勿提交真实凭据。
+请勿提交含有真实凭据的 `server.txt`。
 
 ## 使用
 

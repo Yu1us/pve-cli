@@ -11,7 +11,7 @@ from pathlib import Path
 import requests
 import urllib3
 
-CONFIG = Path(__file__).with_name("server.txt")
+CONFIG = Path.home() / ".pve-exec" / "server.txt"
 REQUEST_TIMEOUT = 30
 COMMAND_TIMEOUT = 300
 
